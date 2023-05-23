@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>105f6259-14c1-4ebb-a9db-49036512070b</connectorid>
+  <description></description>
+  <displayname>FDPO-APIM-Connector</displayname>
+  <iconbrandcolor>#007ee5</iconbrandcolor>
+  <name>new_fdpo-2dapim-2dconnector</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/new_fdpo-2dapim-2dconnector_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/new_fdpo-2dapim-2dconnector_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/new_fdpo-2dapim-2dconnector_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/new_fdpo-2dapim-2dconnector_iconblob.Png</iconblob>
+</Connector>

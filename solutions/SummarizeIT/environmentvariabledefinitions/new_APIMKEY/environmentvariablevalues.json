@@ -1,0 +1,9 @@
+{
+  "environmentvariablevalues": {
+    "environmentvariablevalue": {
+      "@environmentvariablevalueid": "34643d7b-7cf5-ed11-8849-0022489c5e42",
+      "iscustomizable": "1",
+      "value": "/subscriptions/b580d957-1ce0-4e3b-b3b2-7ba2539216e8/resourceGroups/PowerPlatform.RG/providers/Microsoft.KeyVault/vaults/jovadkerpp/secrets/OcpApimSubscriptionKey"
+    }
+  }
+}
