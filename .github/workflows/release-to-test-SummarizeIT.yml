@@ -54,6 +54,9 @@ jobs:
       with:
         name: managedSolutions
         path: ${{ env.solution_release_folder}}
+    - run: |
+        cd ${{ env.solution_release_folder}}
+        dir
     - name: Import solution to test env
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
