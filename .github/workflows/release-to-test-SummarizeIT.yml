@@ -44,7 +44,7 @@ jobs:
 
   release-to-staging:
     needs: [ convert-to-managed ]
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
       with:
