@@ -21,7 +21,7 @@ on:
        default: solutions/
 jobs:
   export-from-dev:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     permissions: write-all 
     steps:
     - uses: actions/checkout@v2
