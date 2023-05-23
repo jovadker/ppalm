@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>new_summarizeit_bfa1c</Name>
+  <AppVersion>2023-05-18T13:51:55Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.23052.19.0</CreatedByClientVersion>
+  <MinClientVersion>3.23052.19.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.23052.19","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20230518T133424Z-3.23052.19.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>SummarizeIT</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"26fc8539-e229-4c7c-a8bf-f69f886e11ef":{"id":"/providers/microsoft.powerapps/apis/shared_fdpo-2dapim-2dconnector-5f11221f6cc1efcc74-5f2098e445b46e0567","displayName":"FDPO-APIM-Connector","iconUri":"https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png","dataSources":["FDPOAPIM"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["davinci"],"customApiLogicalName":"new_fdpo-2dapim-2dconnector","isCustomApiSolutionAware":true}}</ConnectionReferences>
+  <DatabaseReferences>{}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"new_fdpo-2dapim-2dconnector","componenttype":372,"componenttypeplatformname":"connector"}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/new_summarizeit_bfa1c_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/new_summarizeit_bfa1c_DocumentUri.msapp</DocumentUri>
+</CanvasApp>
