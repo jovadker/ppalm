@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  solution_name: Prioritz
+  solution_name: SummarizeIT
   solution_source_folder: solutions
   solution_outbound_folder: out/solutions
   solution_release_folder: out/release
