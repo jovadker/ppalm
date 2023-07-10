@@ -63,7 +63,7 @@ jobs:
       with:
         solution-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
         solution-folder: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
-        solution-type: 'Unmanaged'
+        solution-type: 'Both'
         process-canvas-apps: true
     - run: |
           cd ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
