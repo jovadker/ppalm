@@ -38,7 +38,7 @@ jobs:
           #git add .
           #git commit -m "generated"
           #git push
-    - name: export-solution action
+    - name: export-unmanaged-solution action
       uses: microsoft/powerplatform-actions/export-solution@v0
       with:
         environment-url: ${{secrets.PowerPlatformDevUrl}}
@@ -47,6 +47,7 @@ jobs:
         tenant-id: ${{secrets.PowerPlatformTenantID}}
         solution-name: ${{ github.event.inputs.solution_name }}
         solution-output-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
+        managed: false
     - name: export-managed-solution action
       uses: microsoft/powerplatform-actions/export-solution@v0
       with:
