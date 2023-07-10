@@ -63,7 +63,7 @@ jobs:
       with:
         solution-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
         solution-folder: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
-        solution-type: 'Both'
+        solution-type: 'Unmanaged'
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.2
       with: 
