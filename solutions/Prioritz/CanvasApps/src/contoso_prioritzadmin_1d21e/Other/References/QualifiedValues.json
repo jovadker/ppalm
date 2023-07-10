@@ -1,0 +1,18 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_contoso_prioritztopic_forms",
+      "Namespace": "Prioritz Topics (Forms)",
+      "Values": {
+        "Information": "9872b0ee-539c-485e-9f83-c1fbe01cc5ea"
+      }
+    },
+    {
+      "Kind": "default.cds_contoso_prioritztopicitem_forms",
+      "Namespace": "Prioritz Topic Items (Forms)",
+      "Values": {
+        "Information": "d0379c9e-8750-4a1e-a106-8fd5ea76a2b2"
+      }
+    }
+  ]
+}
