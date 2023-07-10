@@ -64,6 +64,15 @@ jobs:
         solution-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
         solution-folder: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
         solution-type: 'Unmanaged'
+    - run: |
+          cd ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
+          dir
+          #date > generated.txt
+          #git config user.name github-actions
+          #git config user.email github-actions@github.com
+          #git add .
+          #git commit -m "generated"
+          #git push
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.2
       with: 
