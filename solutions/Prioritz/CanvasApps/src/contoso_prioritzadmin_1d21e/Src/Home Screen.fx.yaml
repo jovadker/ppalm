@@ -1,0 +1,85 @@
+"'Home Screen' As screen":
+
+    "'Home header' As Header":
+        Height: =77
+        Width: =1366
+
+    "'Topics gallery' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        AccessibleLabel: ="Topics gallery"
+        Height: =Parent.Height - 'Home header'.Height
+        Items: ='Prioritz Topics'
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate('View Topic Screen')
+        TemplatePadding: =0
+        TemplateSize: =140
+        Width: =Parent.Width
+        X: |
+            =0
+        Y: ='Home header'.Height
+        ZIndex: =2
+
+        Image1 As image:
+            AccessibleLabel: ="Item photo"
+            Height: =128
+            Image: =ThisItem.Photo
+            OnSelect: =Navigate('View Topic Screen')
+            Width: =128
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Topic
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image1.Width - 104
+            X: =Image1.X + Image1.Width + 24
+            Y: =44
+            ZIndex: =2
+
+        Subtitle1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'Respond By'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =Title1.X
+            Y: =Title1.Y + Title1.Height + 4
+            ZIndex: =3
+
+        Separator1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    "'AddTopic icon' As icon.Add":
+        AccessibleLabel: ="Add new topic button"
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.Add
+        OnSelect: =Navigate('Add Topic Screen')
+        Width: =48
+        X: =1218
+        Y: =6
+        ZIndex: =3
+
+    "'Refresh icon' As icon.Add":
+        AccessibleLabel: ="Refresh button"
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.Reload
+        OnSelect: =Refresh('Prioritz Topics')
+        Width: =46
+        X: =1301
+        Y: =6
+        ZIndex: =4
+
