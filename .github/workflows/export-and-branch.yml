@@ -48,6 +48,11 @@ jobs:
         solution-name: ${{ github.event.inputs.solution_name }}
         solution-output-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
         managed: false
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with: 
+       name: unmanagedsolution
+       path: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip   
     - name: export-managed-solution action
       uses: microsoft/powerplatform-actions/export-solution@v0
       with:
