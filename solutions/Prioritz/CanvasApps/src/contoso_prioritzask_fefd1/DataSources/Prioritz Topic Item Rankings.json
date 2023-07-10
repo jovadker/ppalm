@@ -1,0 +1,100 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "contoso_prioritztopicitemrankings",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "contoso_prioritztopicitemranking",
+    "MaxGetRowsCount": 500,
+    "Name": "Prioritz Topic Item Rankings",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "contoso_choice": "Choice",
+      "contoso_PrioritzTopicItem": "PrioritZ Topic Item",
+      "contoso_prioritztopicitemranking_AsyncOperations": "System Jobs",
+      "contoso_prioritztopicitemranking_BulkDeleteFailures": "Bulk Delete Failures",
+      "contoso_prioritztopicitemranking_DuplicateBaseRecord": "Duplicate Records (contoso_prioritztopicitemranking_DuplicateBaseRecord)",
+      "contoso_prioritztopicitemranking_DuplicateMatchingRecord": "Duplicate Records (contoso_prioritztopicitemranking_DuplicateMatchingRecord)",
+      "contoso_prioritztopicitemranking_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "contoso_prioritztopicitemranking_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "contoso_prioritztopicitemranking_ProcessSession": "Process Sessions",
+      "contoso_prioritztopicitemranking_SyncErrors": "Sync Errors",
+      "contoso_prioritztopicitemrankingid": "PrioritZ Topic Item Ranking",
+      "contoso_PrioritzTopicParticipant": "PrioritZ Topic Participant",
+      "contoso_ranking": "Ranking",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Prioritz Topic Item Rankings",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Prioritz Topic Item Rankings (Views)",
+    "Name": "_contoso_prioritztopicitemranking_views",
+    "RelatedEntityName": "Prioritz Topic Item Rankings",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "150f12c3-c29d-4be3-9dce-c9d6b49ccb19": "Prioritz Topic Item Ranking Advanced Find View",
+      "1d67ecba-457b-48eb-8813-386171934a8a": "Active Prioritz Topic Item Rankings",
+      "3e61ac3e-ab71-47d3-a589-87a5fcd12fe3": "Prioritz Topic Item Ranking Associated View",
+      "7b6e0e28-8672-434a-a508-61dba7c05a47": "Prioritz Topic Item Ranking Lookup View",
+      "e637c73f-993d-4080-b1ad-b9db78622c92": "Inactive Prioritz Topic Item Rankings"
+    }
+  },
+  {
+    "DisplayName": "Status (Prioritz Topic Item Rankings)",
+    "Name": "contoso_prioritztopicitemranking_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Prioritz Topic Item Rankings"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Prioritz Topic Item Rankings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Prioritz Topic Item Rankings)",
+    "Name": "contoso_prioritztopicitemranking_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Prioritz Topic Item Rankings"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Prioritz Topic Item Rankings",
+    "Type": "OptionSetInfo"
+  }
+]
