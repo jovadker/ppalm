@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Release to Test - SummarizeIT
+name: Release to Test - ContentGenerator
 
 # Controls when the workflow will run
 on:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  solution_name: SummarizeIT
+  solution_name: ContentGenerator
   solution_source_folder: solutions
   solution_outbound_folder: out/solutions
   solution_release_folder: out/release
