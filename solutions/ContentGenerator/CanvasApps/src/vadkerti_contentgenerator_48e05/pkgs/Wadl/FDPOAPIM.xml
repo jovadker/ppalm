@@ -1,0 +1,173 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://europe-002.azure-apim.net/apim/fdpo-2dapim-2dconnector-5f11221f6cc1efcc74-5f2098e445b46e0567" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="AzureOpenAIInternal" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="AzureOpenAIInternal" />
+  <grammars>
+    <jsonTypes targetNamespace="https://europe-002.azure-apim.net/apim/fdpo-2dapim-2dconnector-5f11221f6cc1efcc74-5f2098e445b46e0567" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="Response16k_id_def" />
+      <string name="Response16k_object_def" />
+      <integer name="Response16k_created_def" />
+      <string name="Response16k_model_def" />
+      <integer name="Response16k_choices_def_items_def_index_def" />
+      <string name="Response16k_choices_def_items_def_finish_reason_def" />
+      <string name="Response16k_choices_def_items_def_message_def_role_def" />
+      <string name="Response16k_choices_def_items_def_message_def_content_def" />
+      <object name="Response16k_choices_def_items_def_message_def">
+        <property name="role" type="string" />
+        <property name="content" type="string" />
+      </object>
+      <object name="Response16k_choices_def_items_def">
+        <property name="index" type="integer" />
+        <property name="finish_reason" type="string" />
+        <property name="message" typeRef="Response16k_choices_def_items_def_message_def" />
+      </object>
+      <array typeRef="Response16k_choices_def_items_def" name="Response16k_choices_def" />
+      <integer name="Response16k_usage_def_completion_tokens_def" />
+      <integer name="Response16k_usage_def_prompt_tokens_def" />
+      <integer name="Response16k_usage_def_total_tokens_def" />
+      <object name="Response16k_usage_def">
+        <property name="completion_tokens" type="integer" />
+        <property name="prompt_tokens" type="integer" />
+        <property name="total_tokens" type="integer" />
+      </object>
+      <object name="Response16k">
+        <property name="id" type="string" />
+        <property name="object" type="string" />
+        <property name="created" type="integer" />
+        <property name="model" type="string" />
+        <property name="choices" typeRef="Response16k_choices_def" />
+        <property name="usage" typeRef="Response16k_usage_def" />
+      </object>
+      <string name="Request16k_messages_def_items_def_role_def" />
+      <string name="Request16k_messages_def_items_def_content_def" />
+      <object name="Request16k_messages_def_items_def">
+        <property name="role" type="string" />
+        <property name="content" type="string" />
+      </object>
+      <array typeRef="Request16k_messages_def_items_def" name="Request16k_messages_def" />
+      <integer name="Request16k_max_tokens_def" />
+      <integer name="Request16k_temperature_def" />
+      <integer name="Request16k_frequency_penalty_def" />
+      <integer name="Request16k_presence_penalty_def" />
+      <number name="Request16k_top_p_def" />
+      <object name="Request16k">
+        <property name="messages" typeRef="Request16k_messages_def" />
+        <property name="max_tokens" type="integer" />
+        <property name="temperature" type="integer" />
+        <property name="frequency_penalty" type="integer" />
+        <property name="presence_penalty" type="integer" />
+        <property name="top_p" type="number" />
+      </object>
+      <string name="Request_prompt_def" />
+      <integer name="Request_max_tokens_def" />
+      <integer name="Request_temperature_def" />
+      <integer name="Request_frequency_penalty_def" />
+      <integer name="Request_presence_penalty_def" />
+      <number name="Request_top_p_def" />
+      <object name="Request">
+        <property name="prompt" type="string" />
+        <property name="max_tokens" type="integer" />
+        <property name="temperature" type="integer" />
+        <property name="frequency_penalty" type="integer" />
+        <property name="presence_penalty" type="integer" />
+        <property name="top_p" type="number" />
+      </object>
+      <string name="Response_id_def" />
+      <string name="Response_object_def" />
+      <integer name="Response_created_def" />
+      <string name="Response_model_def" />
+      <string name="Response_choices_def_items_def_text_def" />
+      <integer name="Response_choices_def_items_def_index_def" />
+      <string name="Response_choices_def_items_def_finish_reason_def" />
+      <integer name="Response_choices_def_items_def_logprobs_def" />
+      <object name="Response_choices_def_items_def">
+        <property name="text" type="string" />
+        <property name="index" type="integer" />
+        <property name="finish_reason" type="string" />
+        <property name="logprobs" type="integer" />
+      </object>
+      <array typeRef="Response_choices_def_items_def" name="Response_choices_def" />
+      <integer name="Response_usage_def_completion_tokens_def" />
+      <integer name="Response_usage_def_prompt_tokens_def" />
+      <integer name="Response_usage_def_total_tokens_def" />
+      <object name="Response_usage_def">
+        <property name="completion_tokens" type="integer" />
+        <property name="prompt_tokens" type="integer" />
+        <property name="total_tokens" type="integer" />
+      </object>
+      <object name="Response">
+        <property name="id" type="string" />
+        <property name="object" type="string" />
+        <property name="created" type="integer" />
+        <property name="model" type="string" />
+        <property name="choices" typeRef="Response_choices_def" />
+        <property name="usage" typeRef="Response_usage_def" />
+      </object>
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://europe-002.azure-apim.net/apim/fdpo-2dapim-2dconnector-5f11221f6cc1efcc74-5f2098e445b46e0567">
+    <resource path="/{connectionId}/openai/deployments/chatgpt-deployment/completions">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="chatgpt" actionName="chatgpt" siena:isDeprecated="false">
+        <doc title="chatgpt&#xA;chatgpt" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="prompt" path="/prompt" type="xs:string" />
+            <param style="plain" name="max_tokens" path="/max_tokens" type="xs:long" />
+            <param style="plain" name="temperature" path="/temperature" type="xs:long" />
+            <param style="plain" name="frequency_penalty" path="/frequency_penalty" type="xs:long" />
+            <param style="plain" name="presence_penalty" path="/presence_penalty" type="xs:long" />
+            <param style="plain" name="top_p" path="/top_p" type="xs:double" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:Response" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/openai/deployments/chatgpt-16k/chat/completions">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="chatgpt16k" actionName="chatgpt16k" siena:isDeprecated="false">
+        <doc title="chatgpt16k&#xA;chatgpt16k" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="messages" path="/messages" type="service:Request16k_messages_def" />
+            <param style="plain" name="max_tokens" path="/max_tokens" type="xs:long" />
+            <param style="plain" name="temperature" path="/temperature" type="xs:long" />
+            <param style="plain" name="frequency_penalty" path="/frequency_penalty" type="xs:long" />
+            <param style="plain" name="presence_penalty" path="/presence_penalty" type="xs:long" />
+            <param style="plain" name="top_p" path="/top_p" type="xs:double" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:Response16k" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/openai/deployments/LevelUp-text-davinci-003/completions">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="davinci" actionName="davinci" siena:isDeprecated="false">
+        <doc title="davinci" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="prompt" path="/prompt" type="xs:string" />
+            <param style="plain" name="max_tokens" path="/max_tokens" type="xs:long" />
+            <param style="plain" name="temperature" path="/temperature" type="xs:long" />
+            <param style="plain" name="frequency_penalty" path="/frequency_penalty" type="xs:long" />
+            <param style="plain" name="presence_penalty" path="/presence_penalty" type="xs:long" />
+            <param style="plain" name="top_p" path="/top_p" type="xs:double" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:Response" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_fdpo-2dapim-2dconnector-5f11221f6cc1efcc74-5f2098e445b46e0567" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>
