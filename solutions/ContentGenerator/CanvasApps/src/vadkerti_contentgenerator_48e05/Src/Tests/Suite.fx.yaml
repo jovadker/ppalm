@@ -1,0 +1,27 @@
+"'5197dd56-e9f1-46f2-acd5-e0d1acb16209' As TestSuite":
+    Description: ="Smoke"
+    DisplayName: ="Suite"
+
+    "'e44c52b7-fdc0-4744-bb3b-4483d16875dc' As TestCase":
+        Description: ="Single-turn conversation"
+        DisplayName: ="Case"
+
+        Step1 As TestStep:
+            Description: ="Set 'Prompt'.Text to ""Write marketing summary about Microsoft in 5 sentences"""
+            Screen: =MainScreen
+            Value: =SetProperty('Prompt'.Text, "Write marketing summary about Microsoft in 5 sentences")
+
+        Step2 As TestStep:
+            Description: ="Select 'Button4_1'"
+            Screen: =MainScreen
+            Value: =Select('Button4_1')
+
+        Step3 As TestStep:
+            Description: ="Select 'Prompt'"
+            Screen: =MainScreen
+            Value: =Select('Prompt')
+
+        Step4 As TestStep:
+            Description: ="Assert"
+            Value: =Assert(IsBlank(TextInput4.Text)=false, "Response is expected, but chatGPT returned nothing back")
+

@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>vadkerti_contentgenerator_48e05</Name>
-  <AppVersion>2023-07-12T09:00:35Z</AppVersion>
+  <AppVersion>2023-07-20T13:55:38Z</AppVersion>
   <Status>Ready</Status>
-  <CreatedByClientVersion>3.23064.16.0</CreatedByClientVersion>
-  <MinClientVersion>3.23064.16.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.23064.16","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20230712T090035Z-3.23064.16.0"}</Tags>
+  <CreatedByClientVersion>3.23072.20.0</CreatedByClientVersion>
+  <MinClientVersion>3.23072.20.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","sienaVersion":"20230712T090035Z-3.23064.16.0","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.23072.20","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","optimizedForTeamsMeeting":"false"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
   <DisplayName>ContentGenerator</DisplayName>
   <Description xsi:nil="true"></Description>
-  <CommitMessage xsi:nil="true"></CommitMessage>
+  <CommitMessage>Saved by Test Studio</CommitMessage>
   <Publisher xsi:nil="true"></Publisher>
   <AuthorizationReferences>[]</AuthorizationReferences>
-  <ConnectionReferences>{"3bbdb3c9-20d4-4521-aac5-6f1d09828002":{"id":"/providers/microsoft.powerapps/apis/shared_fdpo-2dapim-2dconnector-5f11221f6cc1efcc74-5f2098e445b46e0567","displayName":"FDPO-APIM-Connector","iconUri":"https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png","dataSources":["FDPOAPIM"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["chatgpt","chatgpt16k"],"customApiLogicalName":"new_fdpo-2dapim-2dconnector","isCustomApiSolutionAware":true}}</ConnectionReferences>
+  <ConnectionReferences>{"3bbdb3c9-20d4-4521-aac5-6f1d09828002":{"id":"/providers/microsoft.powerapps/apis/shared_fdpo-2dapim-2dconnector-5f11221f6cc1efcc74-5f2098e445b46e0567","displayName":"FDPO-APIM-Connector","iconUri":"https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png","dataSources":["FDPOAPIM"],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"apiTier":"Standard","actions":["chatgpt","chatgpt16k"],"endpoints":[],"customApiLogicalName":"new_fdpo-2dapim-2dconnector","isCustomApiSolutionAware":true}}</ConnectionReferences>
   <DatabaseReferences>{}</DatabaseReferences>
   <AppComponents>[]</AppComponents>
   <AppComponentDependencies>[]</AppComponentDependencies>
