@@ -1,0 +1,10 @@
+Docs As screen:
+
+    Label2 As label:
+        Height: =61
+        Text: ="For ChatGPT, using <|im_end|> ensures that the model response doesn't generate a follow-up user query. You can include as many as four stop sequences."
+        Width: =1145
+        X: =60
+        Y: =60
+        ZIndex: =2
+

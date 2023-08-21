@@ -1,0 +1,242 @@
+"MainScreen As screen.'tabletAutoLayout_HeaderMainFooter_ver1.0'":
+
+    ScreenContainer1 As groupContainer.verticalAutoLayoutContainer:
+        Fill: =RGBA(204, 208, 225, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer1 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(164, 38, 44, 1)
+            FillPortions: =0
+            Height: =75
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            Label1 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.View
+                FontWeight: =FontWeight.Semibold
+                Size: =16
+                Text: ="Summarize IT"
+                Width: =300
+                ZIndex: =1
+
+        MainSectionContainer1 As groupContainer.verticalAutoLayoutContainer:
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =3
+
+            Container6 As groupContainer.verticalAutoLayoutContainer:
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                ZIndex: =1
+
+                Prompt As text:
+                    AlignInContainer: =AlignInContainer.Stretch
+                    BorderColor: =RGBA(39, 113, 194, 1)
+                    Default: =""
+                    FillPortions: =1
+                    HintText: ="Text to be summarized"
+                    MaxLength: =1900
+                    Mode: =TextMode.MultiLine
+                    ZIndex: =1
+
+                Label3 As label:
+                    Align: =Align.Right
+                    AlignInContainer: =AlignInContainer.End
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    Size: =10
+                    Text: =Len(Prompt.Text)&"/"&"1900"
+                    ZIndex: =2
+
+                Container2 As groupContainer.horizontalAutoLayoutContainer:
+                    FillPortions: =0
+                    Height: =50
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =10
+                    LayoutJustifyContent: =LayoutJustifyContent.End
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =4
+
+                    Button4 As button:
+                        Fill: =RGBA(246, 88, 16, 1)
+                        OnSelect: |-
+                            =ClearCollect(mycollection, FDPOAPIM.davinci({prompt: "Please extract the summary of the following text in few bullet points as the input language: "&Char(10)&Char(34)& Prompt.Text&Char(34), max_tokens: MaxToken.Text, temperature:Temperature.Text, frequency_penalty:FreqPenalty.Text, presence_penalty:PresPenalty.Text, top_p:Top_P.Text, stop:"<|im_end|>"}));
+                        Size: =12
+                        Text: ="Call ChatGPT"
+                        ZIndex: =1
+
+                    Button4_1 As button:
+                        Fill: =RGBA(246, 88, 16, 1)
+                        OnSelect: |-
+                            =ClearCollect(myturbocollection, FDPOAPIM.chatgpt16k({messages: [{role:"system", content:"You are a summarizer engine and you extract the summary of the following text in few bullet points in the provided language"}, {role:"user",content:Prompt.Text}], max_tokens: MaxToken.Text, temperature:Temperature.Text, frequency_penalty:FreqPenalty.Text, presence_penalty:PresPenalty.Text, top_p:Top_P.Text, stop:""}));
+                        Size: =12
+                        Text: ="Call ChatGPT Turbo 16k"
+                        Width: =250
+                        ZIndex: =2
+
+            TextInput4 As text:
+                AlignInContainer: =AlignInContainer.Stretch
+                Color: =RGBA(109, 49, 162, 1)
+                Default: |-
+                    =If ( 
+                        IsBlank(First(First(mycollection).choices).text)=true,
+                         First(First(myturbocollection).choices).message.content,
+                         First(First(mycollection).choices).text
+                    )
+                DisplayMode: =DisplayMode.View
+                FillPortions: =1
+                HintText: ="Result"
+                Mode: =TextMode.MultiLine
+                ZIndex: =3
+
+        FooterContainer1 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(50, 86, 160, 1)
+            FillPortions: =0
+            Height: =50
+            LayoutMinHeight: =100
+            LayoutMinWidth: =50
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =4
+
+            Container1 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Start
+                BorderColor: =RGBA(184, 0, 0, 1)
+                Height: =50
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutMinHeight: =60
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                ZIndex: =1
+
+                MaxTokenLabel As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    FontWeight: =FontWeight.Semibold
+                    LayoutMinWidth: =100
+                    Size: =11
+                    Text: |-
+                        ="Max Token:"
+                    Width: =100
+                    ZIndex: =1
+
+                MaxToken As text:
+                    Default: ="300"
+                    Format: =TextFormat.Number
+                    HintText: ="300"
+                    LayoutMinWidth: =50
+                    Size: =11
+                    Width: =60
+                    ZIndex: =2
+
+            Container1_1 As groupContainer.horizontalAutoLayoutContainer:
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutMinHeight: =50
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                ZIndex: =2
+
+                Label5 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Size: =11
+                    Text: |-
+                        ="Temperature:"
+                    Width: =120
+                    ZIndex: =1
+
+                Temperature As text:
+                    Default: ="0.5"
+                    Format: =TextFormat.Number
+                    LayoutMinWidth: =50
+                    Size: =11
+                    Width: =50
+                    ZIndex: =2
+
+            Container1_2 As groupContainer.horizontalAutoLayoutContainer:
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutMinHeight: =50
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                ZIndex: =3
+
+                Label4_1 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    FontWeight: =FontWeight.Semibold
+                    Size: =11
+                    Text: |-
+                        ="Freq. Penalty:"
+                    Width: =120
+                    ZIndex: =1
+
+                FreqPenalty As text:
+                    Default: ="1"
+                    Format: =TextFormat.Number
+                    HintText: ="1"
+                    LayoutMinWidth: =50
+                    Size: =11
+                    Width: =50
+                    ZIndex: =2
+
+            Container1_3 As groupContainer.horizontalAutoLayoutContainer:
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutMinHeight: =50
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                ZIndex: =4
+
+                Label4_2 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Size: =11
+                    Text: |-
+                        ="Pres. Penalty:"
+                    Width: =120
+                    ZIndex: =1
+
+                PresPenalty As text:
+                    Default: ="0"
+                    Format: =TextFormat.Number
+                    HintText: ="10"
+                    LayoutMinWidth: =50
+                    Size: =11
+                    Width: =50
+                    ZIndex: =2
+
+            Container1_4 As groupContainer.horizontalAutoLayoutContainer:
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutMinHeight: =50
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                ZIndex: =5
+
+                Label4_3 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Size: =11
+                    Text: |-
+                        ="Top_P:"
+                    Width: =100
+                    ZIndex: =1
+
+                Top_P As text:
+                    Default: ="0.95"
+                    Format: =TextFormat.Number
+                    HintText: ="0.95"
+                    LayoutMinWidth: =50
+                    Size: =11
+                    Width: =50
+                    ZIndex: =2
+
