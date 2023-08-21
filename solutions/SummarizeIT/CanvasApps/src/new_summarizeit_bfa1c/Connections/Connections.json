@@ -1,0 +1,20 @@
+{
+  "6f566b8f-c13b-4e4c-bbe7-f0931f861a93": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "FDPO-APIM-Connector",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_fdpo-2dapim-2dconnector-5f11221f6cc1efcc74-5f2098e445b46e0567",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "FDPOAPIM"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "6f566b8f-c13b-4e4c-bbe7-f0931f861a93"
+  }
+}

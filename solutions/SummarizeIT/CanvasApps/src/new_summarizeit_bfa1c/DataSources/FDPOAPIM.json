@@ -1,0 +1,8 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_fdpo-2dapim-2dconnector-5f11221f6cc1efcc74-5f2098e445b46e0567",
+    "Name": "FDPOAPIM",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo"
+  }
+]
