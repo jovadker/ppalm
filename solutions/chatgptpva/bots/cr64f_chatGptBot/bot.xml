@@ -1,0 +1,29 @@
+<bot schemaname="cr64f_chatGptBot">
+  <authenticationmode>1</authenticationmode>
+  <authenticationtrigger>0</authenticationtrigger>
+  <iscustomizable>1</iscustomizable>
+  <language>1033</language>
+  <name>ChatGPTBot</name>
+  <runtimeprovider>0</runtimeprovider>
+  <synchronizationstatus>{
+  "contentVersion": 2,
+  "lastFinishedPublishOperation": {
+    "userId": "46fbdf2c-6fa5-4524-8d56-b60541a750b3",
+    "operationStart": "2023-07-24T20:50:14.2217299Z",
+    "operationEnd": "2023-07-24T20:50:16.9681456Z",
+    "status": "Succeeded"
+  },
+  "lastPublishedOnUtc": "2023-07-24T20:50:16Z",
+  "currentSynchronizationState": {
+    "botRegistration": {
+      "applicationId": "71d51077-0ee0-47ef-ab14-651d41f0d404",
+      "isAppAvailableInTenant": true
+    },
+    "provisioningStatus": "Provisioned",
+    "state": "Synchronized"
+  },
+  "lastSynchronizedOnUtc": "2023-07-24T20:52:32.9959205Z"
+}</synchronizationstatus>
+  <template>default-2.0.1</template>
+  <timezoneruleversionnumber>0</timezoneruleversionnumber>
+</bot>

@@ -1,0 +1,170 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_fdpo-2dapim-2dconnector-5f11221f6cc1efcc74-5f2098e445b46e0567": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "vadkerti_sharedfdpo2dapim2dconnector5f11221f6cc1efcc745f2098e445b46e0567_a50f6"
+        },
+        "api": {
+          "name": "shared_fdpo-2dapim-2dconnector-5f11221f6cc1efcc74-5f2098e445b46e0567",
+          "logicalName": "new_fdpo-2dapim-2dconnector"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "872f8f20-e8c2-4206-af9b-66f592a703ce"
+          },
+          "type": "Request",
+          "kind": "VirtualAgent",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "Input",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Return_value(s)_to_Power_Virtual_Agents": {
+          "runAfter": {
+            "Parse_JSON": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "fc9c29aa-7834-4ab6-a110-65dd51939ff4"
+          },
+          "type": "Response",
+          "kind": "VirtualAgent",
+          "inputs": {
+            "statusCode": 200,
+            "body": {
+              "message": "@body('Parse_JSON')?['message']?['content']"
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "title": "message",
+                  "x-ms-dynamically-added": true,
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "chatgpt16k": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "c45cebe1-1c22-4ccf-b8d9-120724bc8c1e"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "apiId": "",
+              "connectionName": "shared_fdpo-2dapim-2dconnector-5f11221f6cc1efcc74-5f2098e445b46e0567",
+              "operationId": "chatgpt16k"
+            },
+            "parameters": {
+              "request16k/messages": [
+                {
+                  "role": "system",
+                  "content": "You are a marketing writing assistant. You help come up with creative content ideas and content like marketing emails, blog posts, tweets, ad copy and product \ndescriptions. You write in a friendly yet professional tone but can tailor your writing style that best works for a user-specified audience. If you do not know the answer to a question, respond by saying \"\"I do not know the answer to your question.\"\""
+                },
+                {
+                  "role": "user",
+                  "content": "@triggerBody()['text']"
+                }
+              ],
+              "request16k/max_tokens": 1000,
+              "request16k/temperature": 1,
+              "request16k/frequency_penalty": 0,
+              "request16k/presence_penalty": 0,
+              "request16k/top_p": 0.5,
+              "request16k/stop": null
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Compose": {
+          "runAfter": {
+            "chatgpt16k": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "660b2a86-3dc8-4bfb-9af9-9fcb9583f4b0"
+          },
+          "type": "Compose",
+          "inputs": "@first(outputs('chatgpt16k')?['body/choices'])"
+        },
+        "Parse_JSON": {
+          "runAfter": {
+            "Compose": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "f4b2d73b-8b9e-4c9e-95ac-7e460dd1048c"
+          },
+          "type": "ParseJson",
+          "inputs": {
+            "content": "@outputs('Compose')",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "integer"
+                },
+                "finish_reason": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "object",
+                  "properties": {
+                    "role": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": "c9cd2c4e691a4646adc8aa592c88489b"
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Entities />
+  <Roles />
+  <Workflows />
+  <FieldSecurityProfiles />
+  <Templates />
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <CustomControls />
+  <EntityDataProviders />
+  <connectionreferences>
+    <connectionreference connectionreferencelogicalname="vadkerti_sharedfdpo2dapim2dconnector5f11221f6cc1efcc745f2098e445b46e0567_a50f6">
+      <connectionreferencedisplayname>FDPO-APIM-Connector chatgptpva-a50f6</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_fdpo-2dapim-2dconnector-5f11221f6cc1efcc74-5f2098e445b46e0567</connectorid>
+      <customconnectorid>
+        <connectorid>105f6259-14c1-4ebb-a9db-49036512070b</connectorid>
+      </customconnectorid>
+      <iscustomizable>1</iscustomizable>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+  </connectionreferences>
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>
