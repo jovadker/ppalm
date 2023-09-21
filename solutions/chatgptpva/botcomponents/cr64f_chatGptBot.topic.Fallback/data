@@ -1,0 +1,25 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnUnknownIntent
+  id: main
+  actions:
+    - kind: SetVariable
+      id: setVariable_7HHwo2
+      variable: Topic.Var1
+      value: =System.LastMessage.Text
+
+    - kind: InvokeFlowAction
+      id: invokeFlowAction_IInEVl
+      input:
+        binding:
+          text: =Topic.Var1
+
+      output:
+        binding:
+          message: Topic.message
+
+      flowId: 5f62b24c-5e2a-ee11-bdf4-0022489c5e42
+
+    - kind: SendActivity
+      id: sendActivity_oawGyb
+      activity: "{Topic.message}"
