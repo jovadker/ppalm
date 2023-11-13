@@ -1,0 +1,79 @@
+{
+  "properties": {
+    "connectionReferences": {},
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "8a51683f-1017-4a52-95f0-f8815c76aee3"
+          },
+          "type": "Request",
+          "kind": "VirtualAgent",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "Text",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Return_value(s)_to_Power_Virtual_Agents": {
+          "runAfter": {
+            "Delay": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "82c6b2f5-ebd4-479f-a547-bc093b1700fe"
+          },
+          "type": "Response",
+          "kind": "VirtualAgent",
+          "inputs": {
+            "statusCode": 200,
+            "body": {},
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "Delay": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "b67e5611-faa1-4bd3-91a1-f0e33e053810"
+          },
+          "type": "Wait",
+          "inputs": {
+            "interval": {
+              "count": 5,
+              "unit": "Second"
+            }
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": "c9cd2c4e691a4646adc8aa592c88489b"
+  },
+  "schemaVersion": "1.0.0.0"
+}

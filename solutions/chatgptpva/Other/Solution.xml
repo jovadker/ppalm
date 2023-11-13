@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.23083.174" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.23103.244" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>chatgptpva</UniqueName>
     <LocalizedNames>
       <LocalizedName description="chatgptpva" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.0.0</Version>
+    <Version>1.0.0.1</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>Vadkerti</UniqueName>
@@ -80,6 +80,7 @@
     <RootComponents>
       <RootComponent type="29" id="{5904ab06-5a2a-ee11-bdf4-0022489c5e42}" behavior="0" />
       <RootComponent type="29" id="{5f62b24c-5e2a-ee11-bdf4-0022489c5e42}" behavior="0" />
+      <RootComponent type="29" id="{9b35281e-de70-ee11-8179-0022489bf799}" behavior="0" />
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>

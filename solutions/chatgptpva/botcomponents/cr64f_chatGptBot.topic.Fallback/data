@@ -3,23 +3,101 @@ beginDialog:
   kind: OnUnknownIntent
   id: main
   actions:
-    - kind: SetVariable
-      id: setVariable_7HHwo2
-      variable: Topic.Var1
-      value: =System.LastMessage.Text
+    - kind: LogCustomTelemetryEvent
+      id: c1NjaK
+      eventName: "=\"Call time\""
+      properties: =Now()
+
+    - kind: ConditionGroup
+      id: conditionGroup_xuIUA5
+      conditions:
+        - id: conditionItem_3ehNuP
+          condition: =IsBlank(Global.QuestionHistory)
+          actions:
+            - kind: ConditionGroup
+              id: conditionGroup_w7zUVs
+              conditions:
+                - id: conditionItem_mVSXeh
+                  condition: =System.LastMessage.Text = "STOP"
+                  actions:
+                    - kind: EndDialog
+                      id: cT5VVm
+
+              elseActions:
+                - kind: ConditionGroup
+                  id: conditionGroup_GVwLZm
+                  conditions:
+                    - id: conditionItem_xsvNvb
+                      condition: =System.LastMessage.Text = "STOP"
+                      actions:
+                        - kind: EndConversation
+                          id: gHpIOR
+
+                        - kind: EndDialog
+                          id: mbDnyh
+
+                        - kind: CancelAllDialogs
+                          id: vHCNLD
+
+            - kind: SetVariable
+              id: setVariable_1tWSny
+              variable: Global.QuestionHistory
+              value: =System.LastMessage.Text
+
+            - kind: SetVariable
+              id: setVariable_ZETp2b
+              variable: Global.Answers
+              value: "=\"\""
+
+      elseActions:
+        - kind: ConditionGroup
+          id: conditionGroup_ywJLy4
+          conditions:
+            - id: conditionItem_Ri1UHQ
+              condition: =System.LastMessage.Text = "STOP"
+              actions:
+                - kind: EndConversation
+                  id: bcUuMk
+
+                - kind: EndDialog
+                  id: kaDx56
+
+                - kind: CancelAllDialogs
+                  id: waW2BE
+
+          elseActions:
+            - kind: SetVariable
+              id: setVariable_J0Qk7o
+              variable: Global.QuestionHistory
+              value: =System.LastMessage.Text
+
+    - kind: SendActivity
+      id: sendActivity_HXRVag
+      activity:
+        kind: Activity
+        activityType: Typing
 
     - kind: InvokeFlowAction
       id: invokeFlowAction_IInEVl
       input:
         binding:
-          text: =Topic.Var1
+          text: =Global.QuestionHistory
+          text_1: =Global.Answers
 
       output:
         binding:
-          message: Topic.message
+          message: Topic.ChatGPTMessage
 
       flowId: 5f62b24c-5e2a-ee11-bdf4-0022489c5e42
 
     - kind: SendActivity
       id: sendActivity_oawGyb
-      activity: "{Topic.message}"
+      activity: "{Topic.ChatGPTMessage}"
+
+    - kind: SetVariable
+      id: setVariable_pxVtHJ
+      variable: Global.Answers
+      value: =Global.Answers & " " & Topic.ChatGPTMessage
+
+    - kind: EndDialog
+      id: IJrB9s
