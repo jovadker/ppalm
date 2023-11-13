@@ -9,11 +9,12 @@
   "contentVersion": 2,
   "lastFinishedPublishOperation": {
     "userId": "46fbdf2c-6fa5-4524-8d56-b60541a750b3",
-    "operationStart": "2023-07-24T20:50:14.2217299Z",
-    "operationEnd": "2023-07-24T20:50:16.9681456Z",
+    "operationStart": "2023-11-12T13:34:28.8062567Z",
+    "operationEnd": "2023-11-12T13:34:55.6928165Z",
     "status": "Succeeded"
   },
-  "lastPublishedOnUtc": "2023-07-24T20:50:16Z",
+  "lastPublishedUserId": "46fbdf2c-6fa5-4524-8d56-b60541a750b3",
+  "lastPublishedOnUtc": "2023-10-05T14:41:08Z",
   "currentSynchronizationState": {
     "botRegistration": {
       "applicationId": "71d51077-0ee0-47ef-ab14-651d41f0d404",
@@ -22,7 +23,7 @@
     "provisioningStatus": "Provisioned",
     "state": "Synchronized"
   },
-  "lastSynchronizedOnUtc": "2023-07-24T20:52:32.9959205Z"
+  "lastSynchronizedOnUtc": "2023-11-12T13:37:21.1063253Z"
 }</synchronizationstatus>
   <template>default-2.0.1</template>
   <timezoneruleversionnumber>0</timezoneruleversionnumber>
